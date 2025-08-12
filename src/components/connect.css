@@ -1,0 +1,31 @@
+/* src/components/Connect.css */
+
+.connect-section {
+  background-color: white;
+  text-align: center;
+  padding: 30px 0;
+  color: #222;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.connect-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 30px;
+}
+
+.icon {
+  color: #3b5998; /* Facebook Blue */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  color: #e1306c; /* Instagram Pink */
+}
