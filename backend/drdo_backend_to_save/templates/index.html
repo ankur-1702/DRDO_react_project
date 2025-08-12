@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FighterJet SQL Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>FighterJet SQL Assistant</h1>
+    <textarea id="question" placeholder="Type your question..."></textarea>
+    <button onclick="submitQuery()">Submit</button>
+    <pre id="result"></pre>
+  </div>
+
+  <script>
+    async function submitQuery() {
+      const question = document.getElementById("question").value;
+      const res = await fetch("/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question }),
+      });
+      const data = await res.json();
+      document.getElementById("result").innerText = data.result;
+    }
+  </script>
+</body>
+</html>
